@@ -1,0 +1,57 @@
+@use '../../styles/variables' as *;
+
+.about {
+  display: flex;
+  margin: 0 24px;
+  border: 3px solid $c-brown-dark;
+  border-radius: 12px;
+  overflow: hidden;
+  background: $c-white;
+
+  @include sm {
+    margin: 0 16px;
+    flex-direction: column;
+  }
+
+  &.cell {
+    flex: 1;
+    padding: 20px 16px;
+    text-align: center;
+    border-right: 2px solid $c-grid;
+
+    @include sm {
+      border-right: none;
+      border-bottom: 2px solid $c-grid;
+      padding: 14px 16px;
+    }
+
+    &:last-child {
+      border-right: none;
+
+      @include sm { border-bottom: none; }
+    }
+
+    &.label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: $c-orange-dark;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    &.value {
+      font-size: 17px;
+      font-weight: 800;
+      color: $c-text-dark;
+      line-height: 1.2;
+      margin-bottom: 4px;
+
+      @include sm { font-size: 15px; }
+    }
+
+    &.desc {
+      font-size: 10px;
+      color: $c-text-mid;
+    }
+  }
+}

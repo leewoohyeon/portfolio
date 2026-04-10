@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.skills {
+  position: relative;
+  margin: 52px 24px 0;
+  border: 3px solid $c-brown-dark;
+  border-radius: 12px;
+  background: $c-white;
+  padding: 28px 24px 22px;
+
+  @include sm { margin: 40px 16px 0; padding: 24px 16px 18px; }
+
+  // 섹션 제목 라벨
+  &.title {
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: $c-brown-dark;
+    color: $c-gold;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+  }
+
+  // 스킬 그룹
+  &.group {
+    & + .skills.group { margin-top: 16px; }
+
+    &.label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: $c-orange-dark;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    &.chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+  }
+
+  // 칩
+  &.chip {
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 4px 12px;
+
+    &.main { background: $c-orange;  color: #fff;           }
+    &.sub  { background: #fef0e0;   color: $c-orange-dark;  }
+    &.tool { background: #f5f0e8;   color: #8a6030;         }
+  }
+}

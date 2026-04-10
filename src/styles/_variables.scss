@@ -1,0 +1,25 @@
+$c-bg:           #fdf3e3;
+$c-white:        #ffffff;
+$c-grid:         #f4c88a;
+
+$c-brown-dark:   #3a2010;
+$c-brown-mid:    #4a2a14;
+$c-brown-border: #5a3820;
+$c-brown-muted:  #8a6040;
+
+$c-orange:       #f4a261;
+$c-orange-dark:  #c87941;
+
+$c-gold:         #ffd093;
+$c-text-dark:    #3a2010;
+$c-text-mid:     #a07850;
+$c-text-light:   #8a6840;
+$c-text-muted:   #c4a080;
+
+$font: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+
+$bp-sm: 480px;
+$bp-md: 768px;
+
+@mixin sm { @media (max-width: $bp-sm) { @content; } }
+@mixin md { @media (max-width: $bp-md) { @content; } }

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './Projects.scss';
 import { PROJECTS, CONNECTOR_COLORS, THEME_COLORS, type Project, type Theme } from '../../data/projects';
 
@@ -66,17 +67,26 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const { name, period, team, role, tags, theme, imgSrc, url } = project;
+  const tooltipRef = useRef<HTMLSpanElement>(null);
 
   const handleClick = () => {
     if (url) window.open(`https://${url}`, '_blank', 'noopener noreferrer');
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!tooltipRef.current) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    tooltipRef.current.style.left = `${e.clientX - rect.left + 12}px`;
+    tooltipRef.current.style.top  = `${e.clientY - rect.top  - 28}px`;
   };
 
   return (
     <div
       className={`card theme-${theme}${url ? ' has-link' : ''}`}
       onClick={handleClick}
+      onMouseMove={url ? handleMouseMove : undefined}
     >
-      {url && <span className="card-tooltip">링크 이동</span>}
+      {url && <span className="card-tooltip" ref={tooltipRef}>링크 이동</span>}
 
       <div className="card-head">
         <div className="card-head-info">

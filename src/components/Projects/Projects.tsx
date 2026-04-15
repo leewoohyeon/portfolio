@@ -121,16 +121,16 @@ const Projects = () => {
   return (
     <section className="projects-section">
       <div className="projects-title">
-        <div className="projects-title-flag">
-          <div className="projects-title-flag-pole" />
-          <div className="projects-title-flag-banner">Projects</div>
-        </div>
+        <div className="projects-title-label">Projects</div>
         <p className="projects-title-sub">과거부터 현재까지 — 경력 프로젝트 6선</p>
       </div>
 
       <div className="board">
         <div className="board-start">
-          <span className="board-start-badge">START</span>
+          <div className="board-start-flag">
+            <div className="board-start-flag-pole" />
+            <div className="board-start-flag-banner">START</div>
+          </div>
         </div>
 
         {PROJECTS.map((project, idx) => {

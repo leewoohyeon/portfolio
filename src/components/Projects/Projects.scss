@@ -41,36 +41,49 @@ $themes: (
   padding: 52px 28px 0;
 }
 
-.projects-title-flag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.projects-title-flag-pole {
-  width: 3px;
-  height: 36px;
-  background: $c-orange;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.projects-title-flag-banner {
-  background: $c-orange;
-  color: #fff;
+.projects-title-label {
+  display: inline-block;
+  background: $c-brown-dark;
+  color: $c-gold;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  padding: 7px 20px 7px 16px;
-  clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
-  line-height: 1;
+  padding: 8px 24px;
+  border-radius: 6px;
+  margin-bottom: 6px;
 }
 
 .projects-title-sub {
   font-size: 13px;
   color: $c-text-mid;
+}
+
+// ── START 깃발
+.board-start-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.board-start-flag-pole {
+  width: 3px;
+  height: 40px;
+  background: $c-brown-dark;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.board-start-flag-banner {
+  background: $c-brown-dark;
+  color: $c-gold;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 7px 22px 7px 14px;
+  clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
+  line-height: 1;
 }
 
 // ── 보드 래퍼
@@ -93,7 +106,6 @@ $themes: (
   padding: 10px 0;
 }
 
-.board-start-badge,
 .board-finish-badge {
   display: inline-block;
   font-size: 13px;
@@ -101,9 +113,7 @@ $themes: (
   letter-spacing: 4px;
   padding: 6px 22px;
   border-radius: 30px;
-  border: 2.5px solid $c-brown-dark;
-  background: $c-brown-dark;
-  color: $c-gold;
+  border: 2.5px solid $c-orange-dark;
 }
 
 .board-finish-badge {

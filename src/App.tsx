@@ -25,7 +25,7 @@ const App = () => {
         {theme === 'light' ? '🌙' : '☀️'}
       </button>
 
-      <Hero characterImgSrc="/profile_img_3.png" />
+      <Hero characterImgSrc={`${import.meta.env.BASE_URL}profile_img_3.png`} />
 
       <div className="game-section">
         <Skills />

@@ -78,7 +78,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <div className="card-img">
         {imgSrc
-          ? <img src={imgSrc} alt={`${name} 스크린샷`} />
+          ? <img src={`${import.meta.env.BASE_URL}${imgSrc}`} alt={`${name} 스크린샷`} />
           : <ImgPlaceholder theme={theme} />
         }
       </div>

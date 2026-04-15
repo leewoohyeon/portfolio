@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     tags: ['HTML/CSS', 'jQuery', 'Illustrator', 'Photoshop'],
     url: 'bigdata-eng.com',
     theme: 'amber',
-    imgSrc: '/project_img_01.png',
+    imgSrc: 'project_img_01.png',
   },
   {
     id: 2,

@@ -33,6 +33,7 @@ $themes: (
   blue:   (#7b9ee0, #f4f6fe, #4461a0, #eef1fd),
   pink:   (#e07b9a, #fff5f8, #a0446a, #fff0f5),
   orange: (#f4a261, #fff8f0, #c87941, #fff3e6),
+  seafoam: (#6aabb5, #f0f8fa, #2a6878, #e4f4f8),
 );
 
 // ── 섹션 타이틀
@@ -62,27 +63,28 @@ $themes: (
 // ── START 깃발
 .board-start-flag {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
 }
 
 .board-start-flag-pole {
   width: 3px;
-  height: 40px;
+  height: 44px;
   background: $c-orange;
   border-radius: 2px;
   flex-shrink: 0;
+  align-self: flex-end;
 }
 
 .board-start-flag-banner {
   background: $c-orange;
   color: #fff;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  padding: 7px 22px 7px 14px;
-  clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
+  padding: 5px 16px 5px 10px;
+  clip-path: polygon(0 0, 100% 0, 86% 50%, 100% 100%, 0 100%);
   line-height: 1;
 }
 
@@ -97,7 +99,12 @@ $themes: (
 }
 
 // START / FINISH
-.board-start,
+.board-start {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0 0;
+}
+
 .board-finish {
   display: flex;
   flex-direction: column;

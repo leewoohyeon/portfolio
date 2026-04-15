@@ -146,17 +146,13 @@ const Projects = () => {
               {!isLast && (
                 <Connector
                   from={position}
-                  color={CONNECTOR_COLORS[project.theme as Theme]}
+                  color={CONNECTOR_COLORS[PROJECTS[idx + 1].theme as Theme]}
                 />
               )}
             </div>
           );
         })}
 
-        <div className="board-finish">
-          <span className="board-finish-badge">NOW</span>
-          <p className="board-finish-sub">진행 중</p>
-        </div>
       </div>
     </section>
   );

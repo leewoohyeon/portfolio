@@ -16,7 +16,7 @@ const GROUPS = [
   {
     label: "DESIGN · TOOL",
     type: "tool" as const,
-    chips: ["Photoshop", "Illustrator", "Figma"],
+    chips: ["Photoshop", "Illustrator", "Figma", "Claude"],
   },
 ];
 

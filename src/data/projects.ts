@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     tags: ['HTML/CSS', 'jQuery', 'Illustrator', 'Photoshop'],
     url: 'bigdata-eng.com',
     theme: 'amber',
-    imgSrc: null,
+    imgSrc: '/project_img_01.png',
   },
   {
     id: 2,
@@ -80,6 +80,15 @@ export const PROJECTS: Project[] = [
     imgSrc: null,
   },
 ];
+
+export const THEME_COLORS: Record<Theme, { imgBg: string; accent: string }> = {
+  amber:  { imgBg: '#fdf8ec', accent: '#d4a044' },
+  purple: { imgBg: '#f5f3fd', accent: '#9b87d6' },
+  teal:   { imgBg: '#f0faf7', accent: '#4db8a0' },
+  blue:   { imgBg: '#f4f6fe', accent: '#7b9ee0' },
+  pink:   { imgBg: '#fff5f8', accent: '#e07b9a' },
+  orange: { imgBg: '#fff8f0', accent: '#f4a261' },
+};
 
 export const CONNECTOR_COLORS: Record<Theme, string> = {
   amber:  '#d4a044',

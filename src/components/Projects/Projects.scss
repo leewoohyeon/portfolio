@@ -1,5 +1,30 @@
 @use '../../styles/variables' as *;
 
+// ── 섹션 래퍼 (격자 배경)
+.projects-section {
+  position: relative;
+  background: $c-bg;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient($c-grid 1px, transparent 1px),
+      linear-gradient(90deg, $c-grid 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: var(--grid-opacity);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 // 카드 테마 컬러 맵 (헤더bg, 이미지bg, 텍스트, 태그bg)
 $themes: (
   amber:  (#d4a044, #fdf8ec, #7a5010, #fdf4df),
@@ -20,7 +45,7 @@ $themes: (
   display: inline-block;
   background: $c-brown-dark;
   color: $c-gold;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -30,7 +55,7 @@ $themes: (
 }
 
 .projects-title-sub {
-  font-size: 12px;
+  font-size: 13px;
   color: $c-text-mid;
 }
 
@@ -38,10 +63,45 @@ $themes: (
 .board {
   max-width: 820px;
   margin: 0 auto;
-  padding: 20px 28px 0;
+  padding: 20px 28px 40px;
 
-  @include md { padding: 16px 20px 0; }
-  @include sm { padding: 12px 16px 0; }
+  @include md { padding: 16px 20px 32px; }
+  @include sm { padding: 12px 16px 28px; }
+}
+
+// START / FINISH
+.board-start,
+.board-finish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 0;
+}
+
+.board-start-badge,
+.board-finish-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  padding: 6px 22px;
+  border-radius: 30px;
+  border: 2.5px solid $c-brown-dark;
+  background: $c-brown-dark;
+  color: $c-gold;
+}
+
+.board-finish-badge {
+  background: $c-orange;
+  border-color: $c-orange-dark;
+  color: #fff;
+}
+
+.board-finish-sub {
+  font-size: 12px;
+  color: $c-text-mid;
+  letter-spacing: 1px;
 }
 
 // ── 보드 아이템 (카드 + 커넥터 묶음)
@@ -78,58 +138,64 @@ $themes: (
 
 // ── 프로젝트 카드
 .card {
-  width: 228px;
+  width: 320px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   background: $c-white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-  @include sm { width: 100%; max-width: 340px; }
+  &:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  @include sm { width: 100%; max-width: 380px; }
 }
 
 .card-head {
-  padding: 11px 14px 9px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  padding: 14px 16px 12px;
 }
 
-.card-head-texts {
-  flex: 1;
+.card-head-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .card-head-name {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: #fff;
   line-height: 1.35;
 }
 
-.card-head-meta {
-  font-size: 9px;
-  color: rgba(#fff, 0.78);
-  margin-top: 3px;
+.card-head-period {
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(#fff, 0.22);
+  color: rgba(#fff, 0.92);
+  white-space: nowrap;
+  align-self: flex-start;
 }
 
-.card-head-period {
-  font-size: 9px;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(#fff, 0.25);
-  color: #fff;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 2px;
+.card-body-team {
+  font-size: 12px;
+  color: $c-text-mid;
+  margin-bottom: 6px;
 }
 
 .card-img {
-  height: 90px;
+  height: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -138,35 +204,26 @@ $themes: (
   }
 }
 
-.card-img-label {
-  font-size: 10px;
-  font-weight: 500;
-}
-
-.card-img-sub {
-  font-size: 9px;
-  color: #bbb;
-}
 
 .card-body {
-  padding: 9px 12px 11px;
-}
-
-.card-body-role {
-  font-size: 10px;
-  color: #666;
-  line-height: 1.55;
-  margin-bottom: 8px;
+  padding: 12px 16px 14px;
 }
 
 .card-body-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  margin-bottom: 8px;
+}
+
+.card-body-role {
+  font-size: 12px;
+  color: $c-text-light;
+  line-height: 1.55;
 }
 
 .card-body-tag {
-  font-size: 9px;
+  font-size: 12px;
   border-radius: 20px;
   padding: 2px 8px;
   font-weight: 500;

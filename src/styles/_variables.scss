@@ -1,21 +1,23 @@
-$c-bg:           #fdf3e3;
-$c-white:        #ffffff;
-$c-grid:         #f4c88a;
+// ── CSS 커스텀 프로퍼티 참조 (런타임 테마 전환)
+$c-bg:           var(--c-bg);
+$c-white:        var(--c-white);
+$c-grid:         var(--c-grid);
 
-$c-brown-dark:   #3a2010;
-$c-brown-mid:    #4a2a14;
-$c-brown-border: #5a3820;
-$c-brown-muted:  #8a6040;
+$c-brown-dark:   var(--c-brown-dark);
+$c-brown-mid:    var(--c-brown-mid);
+$c-brown-border: var(--c-brown-border);
+$c-brown-muted:  var(--c-brown-muted);
 
-$c-orange:       #f4a261;
-$c-orange-dark:  #c87941;
+$c-orange:       var(--c-orange);
+$c-orange-dark:  var(--c-orange-dark);
 
-$c-gold:         #ffd093;
-$c-text-dark:    #3a2010;
-$c-text-mid:     #a07850;
-$c-text-light:   #8a6840;
-$c-text-muted:   #c4a080;
+$c-gold:         var(--c-gold);
+$c-text-dark:    var(--c-text-dark);
+$c-text-mid:     var(--c-text-mid);
+$c-text-light:   var(--c-text-light);
+$c-text-muted:   var(--c-text-muted);
 
+// ── 정적 값 (테마와 무관)
 $font: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
 
 $bp-sm: 480px;

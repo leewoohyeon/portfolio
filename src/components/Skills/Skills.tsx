@@ -1,42 +1,42 @@
 import './Skills.scss';
 
-type ChipType = 'main' | 'sub' | 'tool';
-
-interface SkillGroup {
-  label: string;
-  type: ChipType;
-  chips: string[];
-}
-
-const SKILL_GROUPS: SkillGroup[] = [
+const GROUPS = [
   {
-    label: 'Core',
-    type: 'main',
-    chips: ['HTML', 'CSS · SCSS', 'JavaScript', 'React', 'TypeScript'],
+    label: "CORE",
+    type: "main" as const,
+    chips: [
+      "HTML",
+      "CSS · SCSS",
+      "jQuery",
+      "JavaScript",
+      "React",
+      "TypeScript",
+    ],
   },
   {
-    label: 'Library · Framework',
-    type: 'sub',
-    chips: ['MUI', 'Bootstrap', 'jQuery', 'Swiper', 'API 연동', 'Git'],
-  },
-  {
-    label: 'Design · Tool',
-    type: 'tool',
-    chips: ['Figma', 'Photoshop', 'Illustrator'],
+    label: "DESIGN · TOOL",
+    type: "tool" as const,
+    chips: ["Photoshop", "Illustrator", "Figma"],
   },
 ];
+
+
 
 const Skills = () => {
   return (
     <div className="skills">
-      <span className="skills-title">Tech Stack</span>
+      <div className="skills-header">
+        <span className="skills-title">EQUIPPED SKILLS</span>
+      </div>
 
-      {SKILL_GROUPS.map(({ label, type, chips }) => (
-        <div key={label} className="skills-group">
-          <p className="skills-group-label">{label}</p>
-          <div className="skills-group-chips">
+      {GROUPS.map(({ label, type, chips }) => (
+        <div key={label} className={`skills-group type-${type}`}>
+          <div className="skills-group-header">
+            <span className="skills-group-label">{label}</span>
+          </div>
+          <div className="skills-chips">
             {chips.map((chip) => (
-              <span key={chip} className={`skills-chip ${type}`}>{chip}</span>
+              <span key={chip} className={`skills-chip type-${type}`}>{chip}</span>
             ))}
           </div>
         </div>

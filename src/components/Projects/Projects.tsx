@@ -65,10 +65,19 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { name, period, team, role, tags, theme, imgSrc } = project;
+  const { name, period, team, role, tags, theme, imgSrc, url } = project;
+
+  const handleClick = () => {
+    if (url) window.open(`https://${url}`, '_blank', 'noopener noreferrer');
+  };
 
   return (
-    <div className={`card theme-${theme}`}>
+    <div
+      className={`card theme-${theme}${url ? ' has-link' : ''}`}
+      onClick={handleClick}
+    >
+      {url && <span className="card-tooltip">링크 이동</span>}
+
       <div className="card-head">
         <div className="card-head-info">
           <p className="card-head-name">{name}</p>
@@ -84,7 +93,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </div>
 
       <div className="card-body">
-            <p className="card-body-team">{team}</p>
+        <p className="card-body-team">{team}</p>
         <div className="card-body-tags">
           {tags.map((tag) => (
             <span key={tag} className="card-body-tag">

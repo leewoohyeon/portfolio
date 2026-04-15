@@ -97,7 +97,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <div className="card-img">
         {imgSrc
-          ? <img src={`${import.meta.env.BASE_URL}${imgSrc}`} alt={`${name} 스크린샷`} />
+          ? <img src={`${import.meta.env.BASE_URL}${imgSrc}`} alt={`${name} 프로젝트 이미지`} />
           : <ImgPlaceholder theme={theme} />
         }
       </div>
@@ -121,7 +121,10 @@ const Projects = () => {
   return (
     <section className="projects-section">
       <div className="projects-title">
-        <div className="projects-title-label">Projects</div>
+        <div className="projects-title-flag">
+          <div className="projects-title-flag-pole" />
+          <div className="projects-title-flag-banner">Projects</div>
+        </div>
         <p className="projects-title-sub">과거부터 현재까지 — 경력 프로젝트 6선</p>
       </div>
 

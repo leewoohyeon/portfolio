@@ -41,17 +41,31 @@ $themes: (
   padding: 52px 28px 0;
 }
 
-.projects-title-label {
-  display: inline-block;
-  background: $c-brown-dark;
-  color: $c-gold;
+.projects-title-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.projects-title-flag-pole {
+  width: 3px;
+  height: 36px;
+  background: $c-orange;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.projects-title-flag-banner {
+  background: $c-orange;
+  color: #fff;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
-  padding: 8px 24px;
-  border-radius: 6px;
-  margin-bottom: 6px;
+  padding: 7px 20px 7px 16px;
+  clip-path: polygon(0 0, 100% 0, 88% 50%, 100% 100%, 0 100%);
+  line-height: 1;
 }
 
 .projects-title-sub {
@@ -186,7 +200,7 @@ $themes: (
 }
 
 .card-head-name {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   color: #fff;
   line-height: 1.35;
@@ -211,21 +225,14 @@ $themes: (
 }
 
 .card-img {
-  position: relative;
   height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 
   img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  svg {
-    display: block;
     width: 100%;
     height: 100%;
   }

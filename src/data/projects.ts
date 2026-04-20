@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     tags: ["React", "JavaScript", "MUI"],
     url: null,
     theme: "blue",
-    imgSrc: "project_img_02.png",
+    imgSrc: "project_img_04.png",
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     tags: ["React", "JavaScript", "MUI"],
     url: null,
     theme: "pink",
-    imgSrc: "project_img_04.png",
+    imgSrc: "project_img_05.png",
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ export const PROJECTS: Project[] = [
     tags: ["React", "TypeScript", "SCSS", "Figma"],
     url: null,
     theme: "orange",
-    imgSrc: "project_img_05.png",
+    imgSrc: "project_img_06.png",
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ export const PROJECTS: Project[] = [
     tags: ["React", "TypeScript", "SCSS", "Figma"],
     url: "center.wandohealing.or.kr",
     theme: "seafoam",
-    imgSrc: "project_img_06.png",
+    imgSrc: "project_img_07.png",
   },
 ];
 

@@ -19,13 +19,14 @@ const App = () => {
 
   return (
     <div className="app">
-
       {/* 테마 토글 */}
       <button className="theme-toggle" onClick={toggle} aria-label="테마 전환">
-        {theme === 'light' ? '🌙' : '☀️'}
+        {theme === "light" ? "🌙" : "☀️"}
       </button>
 
-      <Hero characterImgSrc={`${import.meta.env.BASE_URL}profile_img_3.png`} />
+      <Hero
+        characterImgSrc={`${import.meta.env.BASE_URL}profile_img_1.svg`}
+      />
 
       <div className="game-section">
         <Skills />

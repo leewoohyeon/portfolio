@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import './Contact.scss';
 
 const INFO = [
@@ -6,8 +7,20 @@ const INFO = [
 ];
 
 const Contact = () => {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="contact">
+    <footer className={`contact${visible ? ' is-visible' : ''}`} ref={ref}>
       <div className="contact-badge">Open to Work</div>
 
       <h2 className="contact-heading">

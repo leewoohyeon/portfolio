@@ -104,35 +104,6 @@ $themes: (
   padding: 10px 0 0;
 }
 
-.board-finish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 10px 0;
-}
-
-.board-finish-badge {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 4px;
-  padding: 6px 22px;
-  border-radius: 30px;
-  border: 2.5px solid $c-orange-dark;
-}
-
-.board-finish-badge {
-  background: $c-orange;
-  border-color: $c-orange-dark;
-  color: #fff;
-}
-
-.board-finish-sub {
-  font-size: 12px;
-  color: $c-text-mid;
-  letter-spacing: 1px;
-}
 
 // ── 보드 아이템 (카드 + 커넥터 묶음)
 .board-item {
@@ -291,7 +262,6 @@ $themes: (
 
     .card-head    { background: $head-bg; }
     .card-img     { background: $img-bg;  }
-    .card-img-label { color: $text; }
     .card-body-tag  { background: $tag-bg; color: $text; }
   }
 }

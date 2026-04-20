@@ -57,5 +57,5 @@
   border-radius: 20px;
 
   &.type-main { background: $c-orange;                  color: #fff;           }
-  &.type-tool { background: rgba(255, 208, 147, 0.08); color: $c-brown-muted; }
+  &.type-tool { background: rgba(255, 208, 147, 0.16); color: $c-gold; border: 1px solid rgba(255, 208, 147, 0.25); }
 }

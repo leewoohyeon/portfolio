@@ -47,7 +47,7 @@ const Connector = ({ from, color }: ConnectorProps) => {
     <div className="board-item-connector">
       <svg viewBox="0 0 820 120" preserveAspectRatio="none">
         <path
-          d={`M ${x1} 10 Q ${x2} 10 ${x2} 110`}
+          d={`M ${x1} 10 C ${x1} 110 ${x2} 10 ${x2} 110`}
           stroke={color}
           strokeWidth="2.5"
           strokeDasharray="8,6"

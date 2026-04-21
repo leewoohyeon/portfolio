@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 // ── 섹션 래퍼 (격자 배경)
 .projects-section {
@@ -7,7 +7,7 @@
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background-image:
@@ -27,13 +27,48 @@
 
 // 카드 테마 컬러 맵 (헤더bg, 이미지bg, 텍스트, 태그bg)
 $themes: (
-  amber:  (#d4a044, #fdf8ec, #7a5010, #fdf4df),
-  purple: (#9b87d6, #f5f3fd, #4a3589, #f0eeff),
-  teal:   (#4db8a0, #f0faf7, #1a6e56, #e6f7f3),
-  blue:   (#7b9ee0, #f4f6fe, #4461a0, #eef1fd),
-  pink:   (#e07b9a, #fff5f8, #a0446a, #fff0f5),
-  orange: (#f4a261, #fff8f0, #c87941, #fff3e6),
-  seafoam: (#6aabb5, #f0f8fa, #2a6878, #e4f4f8),
+  amber: (
+    #d4a044,
+    #fdf8ec,
+    #7a5010,
+    #fdf4df,
+  ),
+  purple: (
+    #9b87d6,
+    #f5f3fd,
+    #4a3589,
+    #f0eeff,
+  ),
+  teal: (
+    #4db8a0,
+    #f0faf7,
+    #1a6e56,
+    #e6f7f3,
+  ),
+  blue: (
+    #7b9ee0,
+    #f4f6fe,
+    #4461a0,
+    #eef1fd,
+  ),
+  pink: (
+    #e07b9a,
+    #fff5f8,
+    #a0446a,
+    #fff0f5,
+  ),
+  orange: (
+    #f4a261,
+    #fff8f0,
+    #c87941,
+    #fff3e6,
+  ),
+  seafoam: (
+    #6aabb5,
+    #f0f8fa,
+    #2a6878,
+    #e4f4f8,
+  ),
 );
 
 // ── 섹션 타이틀
@@ -89,12 +124,17 @@ $themes: (
 
 // ── 보드 래퍼
 .board {
+  position: relative;
   max-width: 820px;
   margin: 0 auto;
   padding: 20px 28px 40px;
 
-  @include md { padding: 16px 20px 32px; }
-  @include sm { padding: 12px 16px 28px; }
+  @include md {
+    padding: 16px 20px 32px;
+  }
+  @include sm {
+    padding: 12px 16px 28px;
+  }
 }
 
 // START / FINISH
@@ -103,7 +143,6 @@ $themes: (
   align-items: flex-start;
   padding: 10px 0 0;
 }
-
 
 // ── 보드 아이템 (카드 + 커넥터 묶음)
 .board-item {
@@ -114,11 +153,31 @@ $themes: (
 // 카드 행
 .board-item-row {
   display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.65s ease;
 
-  &.left  { justify-content: flex-start; }
-  &.right { justify-content: flex-end;   }
+  &.left {
+    justify-content: flex-start;
+    transform: translateX(-48px);
+  }
+  &.right {
+    justify-content: flex-end;
+    transform: translateX(48px);
+  }
 
-  @include md { justify-content: flex-start !important; }
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @include md {
+    justify-content: flex-start !important;
+    transform: translateX(-48px);
+  }
 }
 
 // 커넥터 SVG 래퍼 — height 값으로 카드 간 세로 간격 조절
@@ -127,9 +186,15 @@ $themes: (
   height: 120px;
   display: block;
   overflow: visible;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
 
-  @include md { height: 80px; }
-  @include sm { height: 56px; }
+  @include md {
+    height: 80px;
+  }
+  @include sm {
+    height: 56px;
+  }
 
   svg {
     width: 100%;
@@ -145,45 +210,58 @@ $themes: (
   border-radius: 14px;
   overflow: hidden;
   background: $c-white;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 
-  &.has-link {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.04);
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 
-    .card-tooltip { opacity: 1; transform: translateY(0); }
+    .card-tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  @include sm { width: 100%; max-width: 380px; }
+  @include sm {
+    width: 100%;
+    max-width: 380px;
+  }
 }
 
-.card-tooltip {
-  position: absolute;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.72);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  pointer-events: none;
-  white-space: nowrap;
+.card-inner {
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 .card-head {
   padding: 14px 16px 12px;
+  display: flex;
+  gap: 8px;
 }
 
 .card-head-info {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.card-step-badge {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(#fff, 0.6);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  align-self: flex-start;
 }
 
 .card-head-name {
@@ -225,7 +303,6 @@ $themes: (
   }
 }
 
-
 .card-body {
   padding: 12px 16px 14px;
 }
@@ -253,15 +330,259 @@ $themes: (
 // ── 테마별 색상 자동 생성
 @each $name, $colors in $themes {
   $head-bg: nth($colors, 1);
-  $img-bg:  nth($colors, 2);
-  $text:    nth($colors, 3);
-  $tag-bg:  nth($colors, 4);
+  $img-bg: nth($colors, 2);
+  $text: nth($colors, 3);
+  $tag-bg: nth($colors, 4);
 
   .card.theme-#{$name} {
-    border: 2px solid $head-bg;
+    .card-inner {
+      border: 2px solid $head-bg;
+    }
+    .card-head {
+      background: $head-bg;
+    }
+    .card-step-badge {
+      span {
+        color: $head-bg;
+      }
+    }
+    .card-img {
+      background: $img-bg;
+    }
+    .card-body-tag {
+      background: $tag-bg;
+      color: $text;
+    }
+  }
+}
 
-    .card-head    { background: $head-bg; }
-    .card-img     { background: $img-bg;  }
-    .card-body-tag  { background: $tag-bg; color: $text; }
+// ── 모달
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: overlay-in 0.2s ease;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: $c-white;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  animation: modal-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modal-header-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: $c-text-dark;
+  line-height: 1.3;
+}
+
+.modal-close {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.07);
+  color: $c-text-dark;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.modal-img {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.modal-img-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+}
+
+.modal-img-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  &.prev {
+    left: 10px;
+  }
+  &.next {
+    right: 10px;
+  }
+}
+
+.modal-img-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.modal-img-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+
+  &.active {
+    background: #fff;
+    transform: scale(1.3);
+  }
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-period {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: $c-text-mid;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.modal-team {
+  font-size: 12px;
+  color: $c-text-mid;
+  margin-bottom: 10px;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.modal-role {
+  font-size: 13px;
+  color: $c-text-light;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// 모달 테마별 색상
+@each $name, $colors in $themes {
+  $head-bg: nth($colors, 1);
+  $img-bg: nth($colors, 2);
+  $text: nth($colors, 3);
+  $tag-bg: nth($colors, 4);
+
+  .modal.theme-#{$name} {
+    .modal-img {
+      background: $img-bg;
+    }
+    .modal-tag {
+      background: $tag-bg;
+      color: $text;
+      font-size: 12px;
+      border-radius: 20px;
+      padding: 2px 8px;
+      font-weight: 500;
+    }
+    .modal-link {
+      background: $head-bg;
+      color: #fff;
+    }
   }
 }

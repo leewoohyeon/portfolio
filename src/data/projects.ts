@@ -9,7 +9,7 @@ export interface Project {
   tags: string[];
   url: string | null;
   theme: Theme;
-  imgSrc: string | null;
+  imgSrc: string | string[] | null;
 }
 
 export const PROJECTS: Project[] = [
@@ -22,7 +22,11 @@ export const PROJECTS: Project[] = [
     tags: ["HTML/CSS", "jQuery", "Photoshop", "Illustrator"],
     url: "bigdata-eng.com",
     theme: "amber",
-    imgSrc: "project_img_01.png",
+    imgSrc: [
+      "project_img_01.png",
+      "modal_01_slide_img_2.png",
+      "modal_01_slide_img_3.png",
+    ],
   },
   {
     id: 2,
@@ -33,7 +37,11 @@ export const PROJECTS: Project[] = [
     tags: ["React", "MUI", "CSS"],
     url: "ezpasscloud.com",
     theme: "purple",
-    imgSrc: "project_img_02.png",
+    imgSrc: [
+      "project_img_02.png",
+      "modal_02_slide_img_2.png",
+      "modal_02_slide_img_3.png",
+    ],
   },
   {
     id: 3,
@@ -44,7 +52,11 @@ export const PROJECTS: Project[] = [
     tags: ["Bootstrap", "HTML/CSS", "JavaScript", "Photoshop", "Illustrator"],
     url: null,
     theme: "teal",
-    imgSrc: "project_img_03.png",
+    imgSrc: [
+      "project_img_03.png",
+      "modal_03_slide_img_2.png",
+      "modal_03_slide_img_3.png",
+    ],
   },
   {
     id: 4,
@@ -55,7 +67,11 @@ export const PROJECTS: Project[] = [
     tags: ["React", "JavaScript", "MUI"],
     url: null,
     theme: "blue",
-    imgSrc: "project_img_04.png",
+    imgSrc: [
+      "project_img_04.png",
+      "modal_04_slide_img_2.png",
+      "modal_04_slide_img_3.png",
+    ],
   },
   {
     id: 5,
@@ -66,7 +82,11 @@ export const PROJECTS: Project[] = [
     tags: ["React", "JavaScript", "MUI"],
     url: null,
     theme: "pink",
-    imgSrc: "project_img_05.png",
+    imgSrc: [
+      "project_img_05.png",
+      "modal_05_slide_img_2.png",
+      "modal_05_slide_img_3.png",
+    ],
   },
   {
     id: 6,
@@ -77,7 +97,11 @@ export const PROJECTS: Project[] = [
     tags: ["React", "TypeScript", "SCSS", "Figma"],
     url: null,
     theme: "orange",
-    imgSrc: "project_img_06.png",
+    imgSrc: [
+      "project_img_06.png",
+      "modal_06_slide_img_2.png",
+      "modal_06_slide_img_3.png",
+    ],
   },
   {
     id: 7,
@@ -88,7 +112,11 @@ export const PROJECTS: Project[] = [
     tags: ["React", "TypeScript", "SCSS", "Figma"],
     url: "center.wandohealing.or.kr",
     theme: "seafoam",
-    imgSrc: "project_img_07.png",
+    imgSrc: [
+      "project_img_07.png",
+      "modal_07_slide_img_2.png",
+      "modal_07_slide_img_3.png",
+    ],
   },
 ];
 

@@ -338,6 +338,9 @@ const ProjectCard = ({ project, stepNum, onClick }: ProjectCardProps) => {
           ) : (
             <ImgPlaceholder theme={theme} />
           )}
+          <div className="card-img-overlay">
+            <span className="card-img-overlay-btn">상세보기</span>
+          </div>
         </div>
 
         <div className="card-body">

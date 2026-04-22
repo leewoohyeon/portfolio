@@ -25,7 +25,6 @@ const GROUPS = [
 const Skills = () => {
   return (
     <div className="skills">
-      <div className="container">
       <div className="skills-header">
         <span className="skills-title">EQUIPPED SKILLS</span>
       </div>
@@ -42,7 +41,6 @@ const Skills = () => {
           </div>
         </div>
       ))}
-      </div>
     </div>
   );
 };

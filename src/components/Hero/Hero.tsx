@@ -21,8 +21,7 @@ const Hero = ({ characterImgSrc = null }: HeroProps) => {
         <i key={i} className="hero-star" style={{ fontSize: s.size, ...s }}>✦</i>
       ))}
 
-      <div className="container">
-        <div className={`hero-character${!characterImgSrc ? ' empty' : ''}`}>
+      <div className={`hero-character${!characterImgSrc ? ' empty' : ''}`}>
           {characterImgSrc ? (
             <img src={characterImgSrc} alt="캐릭터 이미지" />
           ) : (
@@ -54,7 +53,6 @@ const Hero = ({ characterImgSrc = null }: HeroProps) => {
           디자이너로 커리어를 시작해 퍼블리셔로 성장한 개발자.<br />
           디자인 의도를 정확히 읽고, 개발자와 원활하게 협업합니다.
         </p>
-      </div>
 
     </section>
   );

@@ -21,7 +21,6 @@ const Contact = () => {
 
   return (
     <footer className={`contact${visible ? ' is-visible' : ''}`} ref={ref}>
-      <div className="container">
       <div className="contact-badge">Open to Work</div>
 
       <h2 className="contact-heading">
@@ -72,7 +71,6 @@ const Contact = () => {
       <p className="contact-footer">
         &copy; 2026 이우현 · Frontend Developer &amp; Publisher
       </p>
-      </div>
     </footer>
   );
 };

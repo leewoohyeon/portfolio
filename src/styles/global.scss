@@ -3,39 +3,39 @@
 
 // ── 라이트 테마 (기본)
 :root {
-  --c-bg:           #f5f0ff;
+  --c-bg:           #fdf3e3;
   --c-white:        #ffffff;
-  --c-grid:         #c084fc;
-  --c-brown-dark:   #3b0764;
-  --c-brown-mid:    #4c1d95;
-  --c-brown-border: #6d28d9;
-  --c-brown-muted:  #8b5cf6;
-  --c-orange:       #a855f7;
-  --c-orange-dark:  #7c3aed;
-  --c-gold:         #f4c400;
-  --c-text-dark:    #3b0764;
-  --c-text-mid:     #6d28d9;
-  --c-text-light:   #8b5cf6;
-  --c-text-muted:   #a78bfa;
-  --grid-opacity:   0.22;
+  --c-grid:         #f4c88a;
+  --c-brown-dark:   #3a2010;
+  --c-brown-mid:    #4a2a14;
+  --c-brown-border: #5a3820;
+  --c-brown-muted:  #8a6040;
+  --c-orange:       #f4a261;
+  --c-orange-dark:  #c87941;
+  --c-gold:         #ffd093;
+  --c-text-dark:    #3a2010;
+  --c-text-mid:     #a07850;
+  --c-text-light:   #8a6840;
+  --c-text-muted:   #c4a080;
+  --grid-opacity:   0.32;
 }
 
 // ── 다크 테마
 [data-theme="dark"] {
-  --c-bg:           #0f0720;
-  --c-white:        #1e1035;
-  --c-grid:         #7c3aed;
-  --c-brown-dark:   #2d1a4a;
-  --c-brown-mid:    #1e1035;
-  --c-brown-border: #5b21b6;
-  --c-brown-muted:  #7c3aed;
-  --c-orange:       #c084fc;
-  --c-orange-dark:  #a855f7;
-  --c-gold:         #f4c400;
-  --c-text-dark:    #f0e8ff;
-  --c-text-mid:     #c084fc;
-  --c-text-light:   #a78bfa;
-  --c-text-muted:   #6d28d9;
+  --c-bg:           #130e08;
+  --c-white:        #1e1510;
+  --c-grid:         #c4944a;
+  --c-brown-dark:   #3a2a1c;
+  --c-brown-mid:    #2e2018;
+  --c-brown-border: #584030;
+  --c-brown-muted:  #a08868;
+  --c-orange:       #f4a261;
+  --c-orange-dark:  #c87941;
+  --c-gold:         #ffd093;
+  --c-text-dark:    #f0e4cc;
+  --c-text-mid:     #c4a060;
+  --c-text-light:   #b09050;
+  --c-text-muted:   #80684a;
   --grid-opacity:   0.18;
 }
 

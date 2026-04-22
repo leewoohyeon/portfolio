@@ -25,49 +25,49 @@
   }
 }
 
-// 카드 테마 컬러 맵 (헤더bg, 이미지bg, 텍스트, 태그bg) — 보라 계열
+// 카드 테마 컬러 맵 (헤더bg, 이미지bg, 텍스트, 태그bg)
 $themes: (
   amber: (
-    #8b5cf6,
-    #f5f0ff,
-    #4c1d95,
-    #ede9fe,
+    #d4a044,
+    #fdf8ec,
+    #7a5010,
+    #fdf4df,
   ),
   purple: (
-    #a855f7,
-    #faf5ff,
-    #6b21a8,
-    #f3e8ff,
+    #9b87d6,
+    #f5f3fd,
+    #4a3589,
+    #f0eeff,
   ),
   teal: (
-    #6366f1,
-    #eef2ff,
-    #3730a3,
-    #e0e7ff,
+    #4db8a0,
+    #f0faf7,
+    #1a6e56,
+    #e6f7f3,
   ),
   blue: (
-    #818cf8,
-    #eef2ff,
-    #4338ca,
-    #e0e7ff,
+    #7b9ee0,
+    #f4f6fe,
+    #4461a0,
+    #eef1fd,
   ),
   pink: (
-    #d946ef,
-    #fdf4ff,
-    #86198f,
-    #fae8ff,
+    #e07b9a,
+    #fff5f8,
+    #a0446a,
+    #fff0f5,
   ),
   orange: (
-    #c084fc,
-    #faf5ff,
-    #7e22ce,
-    #f5f0ff,
+    #f4a261,
+    #fff8f0,
+    #c87941,
+    #fff3e6,
   ),
   seafoam: (
-    #a78bfa,
-    #f5f3ff,
-    #5b21b6,
-    #ede9fe,
+    #6aabb5,
+    #f0f8fa,
+    #2a6878,
+    #e4f4f8,
   ),
 );
 

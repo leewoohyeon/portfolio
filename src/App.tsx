@@ -20,6 +20,15 @@ const App = () => {
 
   const toggle = () => setTheme(t => t === 'light' ? 'dark' : 'light');
 
+  useEffect(() => {
+    if (!gone) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [gone]);
+
   const handleStart = () => {
     setFlipped(true);
     setTimeout(() => setGone(true), 1000);

@@ -1,28 +1,38 @@
 $pixel-font: 'Press Start 2P', monospace;
 
+// 포트폴리오 다크 팔레트 기반
+$bg:          #130e08;
+$grid-color:  #c4944a;
+$orange:      #f4a261;
+$orange-dark: #c87941;
+$gold:        #ffd093;
+$brown-mid:   #2e2018;
+$brown-border:#584030;
+$text-muted:  #80684a;
+
 .intro {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #1a0a2e;
+  background: $bg;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-// ── 격자 배경
+// ── 격자 배경 (포트폴리오 grid와 동일 패턴)
 .intro-bg-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(180, 100, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(180, 100, 255, 0.12) 1px, transparent 1px);
+    linear-gradient(rgba(196, 148, 74, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 148, 74, 0.15) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
 }
 
-// ── 떠다니는 픽셀 조각들
+// ── 떠다니는 픽셀 조각 (포트폴리오 오렌지/골드 색상)
 .intro-pixels {
   position: absolute;
   inset: 0;
@@ -34,12 +44,12 @@ $pixel-font: 'Press Start 2P', monospace;
   display: block;
   image-rendering: pixelated;
 
-  &.p1 { width: 16px; height: 16px; background: #f4c400; top: 12%; left: 8%;  animation: float 3.2s ease-in-out infinite; }
-  &.p2 { width: 10px; height: 10px; background: #e040fb; top: 22%; right: 10%; animation: float 2.8s ease-in-out infinite 0.6s; }
-  &.p3 { width: 20px; height: 20px; background: #00e5ff; bottom: 20%; left: 12%; animation: float 3.6s ease-in-out infinite 1.1s; }
-  &.p4 { width: 12px; height: 12px; background: #76ff03; bottom: 28%; right: 8%;  animation: float 2.5s ease-in-out infinite 0.3s; }
-  &.p5 { width: 8px;  height: 8px;  background: #ff6d00; top: 60%; left: 5%;   animation: float 4.0s ease-in-out infinite 1.5s; }
-  &.p6 { width: 14px; height: 14px; background: #f4c400; top: 40%; right: 5%;  animation: float 3.0s ease-in-out infinite 0.9s; }
+  &.p1 { width: 16px; height: 16px; background: $gold;         top: 12%;    left: 8%;   animation: float 3.2s ease-in-out infinite; }
+  &.p2 { width: 10px; height: 10px; background: $orange;       top: 22%;    right: 10%; animation: float 2.8s ease-in-out infinite 0.6s; }
+  &.p3 { width: 20px; height: 20px; background: $orange-dark;  bottom: 20%; left: 12%;  animation: float 3.6s ease-in-out infinite 1.1s; }
+  &.p4 { width: 12px; height: 12px; background: $gold;         bottom: 28%; right: 8%;  animation: float 2.5s ease-in-out infinite 0.3s; }
+  &.p5 { width: 8px;  height: 8px;  background: $orange;       top: 60%;    left: 5%;   animation: float 4.0s ease-in-out infinite 1.5s; }
+  &.p6 { width: 14px; height: 14px; background: $orange-dark;  top: 40%;    right: 5%;  animation: float 3.0s ease-in-out infinite 0.9s; }
 }
 
 @keyframes float {
@@ -61,8 +71,9 @@ $pixel-font: 'Press Start 2P', monospace;
 .intro-badge {
   font-family: $pixel-font;
   font-size: 11px;
-  color: #f4c400;
-  border: 2px solid #f4c400;
+  color: $gold;
+  border: 2px solid $brown-border;
+  background: $brown-mid;
   padding: 6px 16px;
   letter-spacing: 3px;
   animation: blink-badge 1.8s step-end infinite;
@@ -70,7 +81,7 @@ $pixel-font: 'Press Start 2P', monospace;
 
 @keyframes blink-badge {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  50%       { opacity: 0.3; }
 }
 
 // ── 타이틀
@@ -84,7 +95,7 @@ $pixel-font: 'Press Start 2P', monospace;
 .intro-sub {
   font-family: $pixel-font;
   font-size: 12px;
-  color: #c084fc;
+  color: $text-muted;
   letter-spacing: 4px;
 }
 
@@ -99,12 +110,12 @@ $pixel-font: 'Press Start 2P', monospace;
 .intro-title-line1 {
   font-family: $pixel-font;
   font-size: clamp(28px, 6vw, 56px);
-  color: #f4c400;
+  color: $gold;
   text-shadow:
-    4px 4px 0 #b8860b,
-    -2px -2px 0 #b8860b,
-    2px -2px 0 #b8860b,
-    -2px 2px 0 #b8860b;
+    4px 4px 0 $orange-dark,
+    -2px -2px 0 $orange-dark,
+    2px -2px 0 $orange-dark,
+    -2px 2px 0 $orange-dark;
   letter-spacing: 6px;
   animation: glow 2s ease-in-out infinite alternate;
 }
@@ -112,23 +123,23 @@ $pixel-font: 'Press Start 2P', monospace;
 .intro-title-line2 {
   font-family: $pixel-font;
   font-size: clamp(18px, 4vw, 36px);
-  color: #ffffff;
+  color: $orange;
   text-shadow:
-    3px 3px 0 #6d28d9,
-    -1px -1px 0 #6d28d9;
+    3px 3px 0 $orange-dark,
+    -1px -1px 0 $orange-dark;
   letter-spacing: 12px;
 }
 
 @keyframes glow {
-  from { text-shadow: 4px 4px 0 #b8860b, 0 0 10px #f4c40060; }
-  to   { text-shadow: 4px 4px 0 #b8860b, 0 0 28px #f4c400cc, 0 0 50px #f4c40044; }
+  from { text-shadow: 4px 4px 0 $orange-dark, 0 0 10px rgba(244, 162, 97, 0.4); }
+  to   { text-shadow: 4px 4px 0 $orange-dark, 0 0 28px rgba(255, 208, 147, 0.7), 0 0 50px rgba(244, 162, 97, 0.3); }
 }
 
 // ── 커서 화살표
 .intro-cursor {
   font-family: $pixel-font;
   font-size: 14px;
-  color: #c084fc;
+  color: $orange;
   animation: bounce-cursor 0.8s ease-in-out infinite alternate;
 }
 
@@ -141,19 +152,18 @@ $pixel-font: 'Press Start 2P', monospace;
 .intro-btn {
   font-family: $pixel-font;
   font-size: clamp(10px, 2vw, 14px);
-  color: #1a0a2e;
-  background: #f4c400;
+  color: $bg;
+  background: $orange;
   border: none;
   padding: 16px 36px;
   cursor: pointer;
   letter-spacing: 3px;
-  box-shadow: 4px 4px 0 #b8860b, 8px 8px 0 rgba(0,0,0,0.3);
+  box-shadow: 4px 4px 0 $orange-dark, 8px 8px 0 rgba(0, 0, 0, 0.4);
   transition: transform 0.1s, box-shadow 0.1s;
-  image-rendering: pixelated;
 
   &:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 #b8860b, 10px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 6px 6px 0 $orange-dark, 10px 10px 0 rgba(0, 0, 0, 0.4);
   }
 
   &:active {
@@ -166,6 +176,6 @@ $pixel-font: 'Press Start 2P', monospace;
 .intro-copy {
   font-family: $pixel-font;
   font-size: 8px;
-  color: rgba(180, 130, 255, 0.5);
+  color: $text-muted;
   letter-spacing: 2px;
 }

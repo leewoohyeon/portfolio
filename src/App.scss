@@ -1,5 +1,45 @@
 @use './styles/variables' as *;
 
+// ── 카드 플립
+.flip-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  perspective: 1400px;
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-front {
+  transform: rotateY(0deg);
+}
+
+.flip-back {
+  background: $c-bg;
+  transform: rotateY(180deg);
+}
+
+.flip-scene.flipped .flip-front {
+  transform: rotateY(-180deg);
+}
+
+.flip-scene.flipped .flip-back {
+  transform: rotateY(0deg);
+}
+
+// ── 포트폴리오 본체
+.app--hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .app {
   background: $c-bg;
   min-height: 100vh;

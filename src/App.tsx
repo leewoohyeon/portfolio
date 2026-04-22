@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './styles/global.scss';
 import './App.scss';
+import Intro    from './components/Intro/Intro';
 import Hero     from './components/Hero/Hero';
 import Projects from './components/Projects/Projects';
 import Skills   from './components/Skills/Skills';
@@ -9,7 +10,9 @@ import Contact  from './components/Contact/Contact';
 type Theme = 'light' | 'dark';
 
 const App = () => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme]     = useState<Theme>('light');
+  const [flipped, setFlipped] = useState(false);
+  const [gone, setGone]       = useState(false);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -17,24 +20,37 @@ const App = () => {
 
   const toggle = () => setTheme(t => t === 'light' ? 'dark' : 'light');
 
+  const handleStart = () => {
+    setFlipped(true);
+    setTimeout(() => setGone(true), 1000);
+  };
+
   return (
-    <div className="app">
-      {/* 테마 토글 */}
-      <button className="theme-toggle" onClick={toggle} aria-label="테마 전환">
-        {theme === "light" ? "🌙" : "☀️"}
-      </button>
+    <>
+      {!gone && (
+        <div className={`flip-scene${flipped ? ' flipped' : ''}`}>
+          <div className="flip-front">
+            <Intro onStart={handleStart} />
+          </div>
+          <div className="flip-back" />
+        </div>
+      )}
 
-      <Hero
-        characterImgSrc={`${import.meta.env.BASE_URL}profile_img_1.svg`}
-      />
+      <div className={`app${gone ? '' : ' app--hidden'}`}>
+        <button className="theme-toggle" onClick={toggle} aria-label="테마 전환">
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
 
-      <div className="game-section">
-        <Skills />
+        <Hero characterImgSrc={`${import.meta.env.BASE_URL}profile_img_1.svg`} />
+
+        <div className="game-section">
+          <Skills />
+        </div>
+
+        <Projects />
+        <Contact />
       </div>
-
-      <Projects />
-      <Contact />
-    </div>
+    </>
   );
 };
 

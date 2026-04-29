@@ -178,11 +178,13 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
   } = project;
   const images = imgSrc ? (Array.isArray(imgSrc) ? imgSrc : [imgSrc]) : [];
   const [imgIdx, setImgIdx] = useState(0);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
+
   const hasMultiple = images.length > 1;
   const prev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -191,6 +193,16 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
   const next = (e: React.MouseEvent) => {
     e.stopPropagation();
     setImgIdx((i) => (i + 1) % images.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) < 50) return;
+    if (delta > 0) setImgIdx((i) => (i + 1) % images.length);
+    else setImgIdx((i) => (i - 1 + images.length) % images.length);
   };
 
   return (
@@ -212,7 +224,7 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
             </svg>
           </button>
         </div>
-        <div className="modal-img">
+        <div className="modal-img" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           {images.length > 0 ? (
             <div
               className="modal-img-track"

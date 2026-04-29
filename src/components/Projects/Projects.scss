@@ -431,8 +431,7 @@ $themes: (
   animation: overlay-in 0.2s ease;
 
   @include sm {
-    padding: 0;
-    align-items: flex-end;
+    padding: 16px;
   }
 }
 
@@ -456,12 +455,9 @@ $themes: (
   animation: modal-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 
   @include sm {
-    max-width: 100%;
-    border-radius: 20px 20px 0 0;
     max-height: 90dvh;
     display: flex;
     flex-direction: column;
-    animation: modal-in-sm 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
@@ -473,17 +469,6 @@ $themes: (
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes modal-in-sm {
-  from {
-    opacity: 0.6;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

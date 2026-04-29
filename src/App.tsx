@@ -7,18 +7,9 @@ import Projects from './components/Projects/Projects';
 import Skills   from './components/Skills/Skills';
 import Contact  from './components/Contact/Contact';
 
-type Theme = 'light' | 'dark';
-
 const App = () => {
-  const [theme, setTheme]     = useState<Theme>('light');
   const [flipped, setFlipped] = useState(false);
   const [gone, setGone]       = useState(false);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
-
-  const toggle = () => setTheme(t => t === 'light' ? 'dark' : 'light');
 
   useEffect(() => {
     if (!gone) {
@@ -46,14 +37,22 @@ const App = () => {
       )}
 
       <div className={`app${gone ? '' : ' app--hidden'}`}>
-        <button className="theme-toggle" onClick={toggle} aria-label="테마 전환">
-          {theme === "light" ? "🌙" : "☀️"}
-        </button>
+        <div className="bg-pixels" aria-hidden="true">
+          <span className="bg-pixel bp1" />
+          <span className="bg-pixel bp2" />
+          <span className="bg-pixel bp3" />
+          <span className="bg-pixel bp4" />
+          <span className="bg-pixel bp5" />
+          <span className="bg-pixel bp6" />
+          <span className="bg-pixel bp7" />
+          <span className="bg-pixel bp8" />
+        </div>
 
-        <Hero characterImgSrc={`${import.meta.env.BASE_URL}profile_img_1.svg`} />
-
-        <div className="game-section">
-          <Skills />
+        <div className="id-card-wrap">
+          <div className="id-card-section">
+            <Hero characterImgSrc={`${import.meta.env.BASE_URL}profile_img_1.svg`} />
+            <Skills />
+          </div>
         </div>
 
         <Projects />

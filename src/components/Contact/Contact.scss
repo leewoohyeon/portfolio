@@ -39,7 +39,7 @@
   display: inline-block;
   background: $c-orange;
   color: $c-brown-dark;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 2px;
   padding: 5px 16px;
@@ -49,17 +49,17 @@
 }
 
 .contact-heading {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 800;
   color: $c-gold;
   margin-bottom: 10px;
   line-height: 1.4;
 
-  @include sm { font-size: 18px; }
+  @include sm { font-size: 1.125rem; }
 }
 
 .contact-desc {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: $c-text-muted;
   line-height: 1.8;
   margin-bottom: 32px;
@@ -83,7 +83,7 @@
 }
 
 .contact-info-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: $c-brown-muted;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -91,7 +91,7 @@
 }
 
 .contact-info-value {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: $c-gold;
   font-weight: 700;
 }
@@ -108,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   padding: 13px 28px;
   border-radius: 12px;
@@ -136,7 +136,7 @@
 }
 
 .contact-footer {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: $c-brown-muted;
   margin-top: 24px;
   letter-spacing: 1px;

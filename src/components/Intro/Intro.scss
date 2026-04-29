@@ -4,7 +4,7 @@ $bg:     #1a0a2e;
 $grid:   rgba(180, 100, 255, 0.14);
 $violet: #c084fc;
 $purple: #a855f7;
-$yellow: #f4c400;
+$yellow: #ff9700;
 $yellow-dark: #b8860b;
 $muted:  rgba(180, 130, 255, 0.5);
 $dark-card: rgba(45, 26, 74, 0.8);
@@ -66,7 +66,7 @@ $border: #5b21b6;
 
 .intro-badge {
   font-family: $pixel-font;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: $yellow;
   border: 2px solid $yellow;
   padding: 6px 16px;
@@ -88,7 +88,7 @@ $border: #5b21b6;
 
 .intro-sub {
   font-family: $pixel-font;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: $violet;
   letter-spacing: 4px;
 }
@@ -103,7 +103,7 @@ $border: #5b21b6;
 
 .intro-title-line1 {
   font-family: $pixel-font;
-  font-size: clamp(28px, 6vw, 56px);
+  font-size: clamp(1.75rem, 6vw, 3.5rem);
   color: $yellow;
   text-shadow:
     4px 4px 0 $yellow-dark,
@@ -116,7 +116,7 @@ $border: #5b21b6;
 
 .intro-title-line2 {
   font-family: $pixel-font;
-  font-size: clamp(18px, 4vw, 36px);
+  font-size: clamp(1.125rem, 4vw, 2.25rem);
   color: #ffffff;
   text-shadow:
     3px 3px 0 #6d28d9,
@@ -131,7 +131,7 @@ $border: #5b21b6;
 
 .intro-cursor {
   font-family: $pixel-font;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: $violet;
   animation: bounce-cursor 0.8s ease-in-out infinite alternate;
 }
@@ -143,7 +143,7 @@ $border: #5b21b6;
 
 .intro-btn {
   font-family: $pixel-font;
-  font-size: clamp(10px, 2vw, 14px);
+  font-size: clamp(0.625rem, 2vw, 0.875rem);
   color: #1a0a2e;
   background: $yellow;
   border: none;
@@ -166,7 +166,7 @@ $border: #5b21b6;
 
 .intro-copy {
   font-family: $pixel-font;
-  font-size: 8px;
+  font-size: 0.5rem;
   color: $muted;
   letter-spacing: 2px;
 }

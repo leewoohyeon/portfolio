@@ -20,24 +20,6 @@
   --grid-opacity:   0.32;
 }
 
-// ── 다크 테마
-[data-theme="dark"] {
-  --c-bg:           #130e08;
-  --c-white:        #1e1510;
-  --c-grid:         #c4944a;
-  --c-brown-dark:   #3a2a1c;
-  --c-brown-mid:    #2e2018;
-  --c-brown-border: #584030;
-  --c-brown-muted:  #a08868;
-  --c-orange:       #f4a261;
-  --c-orange-dark:  #c87941;
-  --c-gold:         #ffd093;
-  --c-text-dark:    #f0e4cc;
-  --c-text-mid:     #c4a060;
-  --c-text-light:   #b09050;
-  --c-text-muted:   #80684a;
-  --grid-opacity:   0.18;
-}
 
 body {
   font-family: $font;

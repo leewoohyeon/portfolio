@@ -75,24 +75,31 @@ $themes: (
 .projects-title {
   text-align: center;
   padding: 52px 28px 0;
+
+  @include md { padding: 40px 20px 0; }
+  @include sm { padding: 32px 16px 0; }
 }
 
 .projects-title-label {
   display: inline-block;
   background: $c-brown-dark;
   color: $c-gold;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
   padding: 8px 24px;
   border-radius: 6px;
   margin-bottom: 6px;
+
+  @include sm { font-size: 0.75rem; letter-spacing: 2px; padding: 6px 18px; }
 }
 
 .projects-title-sub {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: $c-text-mid;
+
+  @include sm { font-size: 0.75rem; }
 }
 
 // ── START 깃발
@@ -114,7 +121,7 @@ $themes: (
 .board-start-flag-banner {
   background: $c-orange;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   padding: 8px 16px 8px 10px;
@@ -178,22 +185,31 @@ $themes: (
     justify-content: flex-start !important;
     transform: translateX(-48px);
   }
+
+  @include sm {
+    justify-content: center !important;
+    transform: translateY(24px) !important;
+
+    &.is-visible {
+      transform: translateY(0) !important;
+    }
+  }
 }
 
 // 커넥터 SVG 래퍼 — height 값으로 카드 간 세로 간격 조절
 .board-item-connector {
   width: 100%;
-  height: 120px;
+  height: 160px;
   display: block;
   overflow: visible;
   opacity: 0.15;
   transition: opacity 0.3s ease;
 
   @include md {
-    height: 80px;
+    height: 120px;
   }
   @include sm {
-    height: 56px;
+    height: 100px;
   }
 
   svg {
@@ -229,9 +245,13 @@ $themes: (
     }
   }
 
+  @include md {
+    width: 280px;
+  }
+
   @include sm {
     width: 100%;
-    max-width: 380px;
+    max-width: 260px;
   }
 }
 
@@ -258,7 +278,7 @@ $themes: (
   height: 28px;
   border-radius: 50%;
   background: rgba(#fff, 0.6);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -268,14 +288,14 @@ $themes: (
 }
 
 .card-head-name {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: #fff;
   line-height: 1.35;
 }
 
 .card-head-period {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   display: inline-block;
   padding: 2px 7px;
@@ -287,7 +307,7 @@ $themes: (
 }
 
 .card-body-team {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: $c-text-mid;
   margin-bottom: 6px;
 }
@@ -320,7 +340,7 @@ $themes: (
 }
 
 .card-img-overlay-btn {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #fff;
   padding: 8px 18px;
@@ -342,16 +362,23 @@ $themes: (
 }
 
 .card-body-role {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: $c-text-light;
   line-height: 1.55;
+
 }
 
 .card-body-tag {
-  font-size: 12px;
+  font-size: 0.75rem;
   border-radius: 20px;
   padding: 2px 8px;
   font-weight: 500;
+}
+
+.card-body-excerpt {
+  font-size: 0.9375rem;
+
+
 }
 
 // ── 테마별 색상 자동 생성
@@ -402,6 +429,11 @@ $themes: (
   justify-content: center;
   padding: 24px;
   animation: overlay-in 0.2s ease;
+
+  @include sm {
+    padding: 0;
+    align-items: flex-end;
+  }
 }
 
 @keyframes overlay-in {
@@ -422,6 +454,15 @@ $themes: (
   background: $c-white;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
   animation: modal-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @include sm {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    max-height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    animation: modal-in-sm 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 }
 
 @keyframes modal-in {
@@ -435,16 +476,30 @@ $themes: (
   }
 }
 
+@keyframes modal-in-sm {
+  from {
+    opacity: 0.6;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+
+  @include sm { padding: 16px; }
 }
 
 .modal-header-name {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: $c-text-dark;
   line-height: 1.3;
@@ -473,6 +528,9 @@ $themes: (
   position: relative;
   height: 280px;
   overflow: hidden;
+  flex-shrink: 0;
+
+  @include sm { height: 210px; }
 }
 
 .modal-img-track {
@@ -502,7 +560,7 @@ $themes: (
   border: none;
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -548,44 +606,82 @@ $themes: (
 }
 
 .modal-body {
-  padding: 20px;
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include sm {
+    padding: 16px 16px 32px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
-.modal-period {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: $c-text-mid;
+// ── 메타 정보 (기간 / 주요기능 / 기여도)
+.modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-meta-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.modal-meta-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $c-text-muted;
   white-space: nowrap;
-  padding-top: 2px;
 }
 
-.modal-team {
-  font-size: 12px;
-  color: $c-text-mid;
-  margin-bottom: 10px;
+.modal-meta-value {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $c-text-dark;
+  line-height: 1.5;
+}
+
+// ── 섹션 공통 (주요기술 / 담당 역할)
+.modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-section-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $c-text-muted;
 }
 
 .modal-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  margin-bottom: 10px;
 }
 
 .modal-role {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: $c-text-light;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  line-height: 1.65;
+  margin: 0;
 }
 
 .modal-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  align-self: flex-end;
+  font-size: 0.8125rem;
   font-weight: 700;
   padding: 9px 18px;
   border-radius: 10px;
@@ -594,6 +690,30 @@ $themes: (
 
   &:hover {
     opacity: 0.8;
+  }
+}
+
+// ── 고양이 게임말
+.cat-img {
+  display: block;
+}
+
+.game-token {
+  @include sm { display: none; }
+}
+
+.game-token.popping .cat-img {
+  animation: cat-appear 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes cat-appear {
+  from {
+    transform: scale(0.4) translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 
@@ -611,7 +731,7 @@ $themes: (
     .modal-tag {
       background: $tag-bg;
       color: $text;
-      font-size: 12px;
+      font-size: 0.75rem;
       border-radius: 20px;
       padding: 2px 8px;
       font-weight: 500;

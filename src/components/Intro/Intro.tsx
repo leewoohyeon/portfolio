@@ -35,7 +35,7 @@ const Intro = ({ onStart }: IntroProps) => {
           ▶&nbsp;&nbsp;PRESS START
         </button>
 
-        <p className="intro-copy">© 2025 LEE WOOHYEON</p>
+        <p className="intro-copy">© 2026 LEE WOOHYEON</p>
       </div>
     </div>
   );

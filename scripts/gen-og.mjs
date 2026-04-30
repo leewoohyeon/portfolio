@@ -1,11 +1,12 @@
 import puppeteer from 'puppeteer';
-import { pathToFileURL } from 'url';
+import { readFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const rootDir   = path.join(__dirname, '..');
-const profileUrl = pathToFileURL(path.join(rootDir, 'public/profile_img_1.svg')).href;
+const __dirname  = path.dirname(fileURLToPath(import.meta.url));
+const rootDir    = path.join(__dirname, '..');
+const profileSvg = readFileSync(path.join(rootDir, 'public/profile_img_1.svg'));
+const profileUrl = `data:image/svg+xml;base64,${profileSvg.toString('base64')}`;
 
 const html = `<!DOCTYPE html>
 <html lang="ko">

@@ -174,7 +174,7 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
     theme,
     imgSrc,
     url,
-    projectInfo,
+    retrospective,
   } = project;
   const images = imgSrc ? (Array.isArray(imgSrc) ? imgSrc : [imgSrc]) : [];
   const [imgIdx, setImgIdx] = useState(0);
@@ -319,10 +319,13 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
             <p className="modal-role">{role}</p>
           </div>
 
-          {/* 설명 */}
-          <div className="modal-section">
-            <p className="modal-project-info">{projectInfo}</p>
-          </div>
+          {/* 회고 */}
+          {retrospective && (
+            <div className="modal-section">
+              <span className="modal-section-label">회고</span>
+              <p className="modal-project-info">{retrospective}</p>
+            </div>
+          )}
 
           {url && (
             <a

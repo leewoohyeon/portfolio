@@ -18,7 +18,7 @@ export interface Project {
   url?: string;
   theme: Theme;
   imgSrc: string | string[] | null;
-  projectInfo?: string;
+  retrospective?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
       "modal_01_slide_img_2.png",
       "modal_01_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "입사 후 처음으로 맡은 프로젝트입니다. 프로젝트 단위 업무가 처음이었던 만큼, 기획서를 읽는 방법이나 퍼블리셔와 개발자의 역할 경계를 파악하는 데 초반에 어려움이 있었습니다. 이를 계기로 기획자, 개발자와 적극적으로 소통하며 모호한 부분은 적극적으로 질문하고 조율하는 협업 방식을 익혔습니다. 이 경험이 이후 프로젝트에서도 원활한 협업의 기반이 되었습니다.",
   },
   {
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
       "modal_02_slide_img_2.png",
       "modal_02_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "HTML·CSS에서 React로 처음 전환한 프로젝트입니다. 이 프로젝트를 계기로 React를 본격적으로 공부하기 시작했으나, 훅과 컴포넌트 개념이 익숙하지 않아 기존 방식과의 차이에 초반에 어려움이 있었습니다. 직접 사용하며 컴포넌트 구조에 대한 이해를 쌓았고, 개발자가 미처 다루지 못한 반응형 작업에 집중하며 실질적인 기여를 할 수 있었습니다. MUI 라이브러리를 활용한 스타일링도 시행착오를 거치며 익혀, React 기반 개발의 장점을 체감한 프로젝트입니다.",
   },
   {
@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
       "modal_03_slide_img_2.png",
       "modal_03_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "Bootstrap을 처음 실무에 적용한 프로젝트입니다. 개념은 알고 있었지만 직접 사용하는 것은 처음이었던 만큼, 기존 스타일 코드를 파악하고 불필요한 속성을 걸러내며 커스텀하는 과정에서 어려움이 있었습니다. 이를 통해 프레임워크의 구조를 실무 수준에서 이해하고, 효율적으로 활용하는 방법을 익혔습니다",
   },
   {
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
       "modal_04_slide_img_2.png",
       "modal_04_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "처음으로 프론트엔드 개발을 담당한 프로젝트입니다. 신규 페이지 개발과 CRUD 기반의 API 연동 및 기능 구현을 맡았으며, 반응형 UI도 함께 고려하여 개발했습니다. API 연동이 처음이었던 만큼 요청과 응답 흐름을 이해하는 데 초반에 어려움이 있었지만, 직접 구현하며 데이터 흐름을 파악하게 되었고 기능이 동작하는 과정에서 개발의 흥미를 느낄 수 있었던 프로젝트입니다",
   },
   {
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
       "modal_05_slide_img_2.png",
       "modal_05_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "이전 PERFORMAX 프로젝트의 소스를 기반으로 UI 및 공통 컴포넌트 작업을 진행한 프로젝트입니다. 반응형 작업과 CRUD 기반의 API 연동을 담당했으며, 타 업체와의 첫 협업인 만큼 기획서와 실제 데이터 간의 불일치 문제가 발생해 백엔드 개발자와 긴밀하게 소통하며 조율했습니다. 서로 다른 사무실에서 협업하다 보니 의사소통과 오류 대응에 시간이 걸리는 어려움이 있었지만, 점차 적응하며 협업 방식을 익혔습니다. 또한 이전 프로젝트보다 로직이 비교적 단순해 API 흐름을 더 깊이 이해하는 데 도움이 된 프로젝트입니다.",
   },
   {
@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
       "modal_06_slide_img_2.png",
       "modal_06_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "TSX와 SCSS를 사용해 UI 라이브러리 없이 컴포넌트를 직접 설계하고 구현한 프로젝트입니다. 이전까지 JSX와 UI 라이브러리 위주로 개발해왔던 만큼, TSX로 전환하며 두 방식의 차이를 이해하는 데 초반에 어려움이 있었습니다. 그럼에도 공통 컴포넌트를 처음으로 직접 설계하며 props와 type 정의 방식을 익혔고, 재사용 가능한 컴포넌트 구조를 고민하고 구현하는 경험을 쌓았습니다. 라이브러리에 의존하지 않고 SCSS로 스타일링을 직접 작성하며 컴포넌트의 구조와 스타일을 주도적으로 설계할 수 있었던 프로젝트입니다.",
   },
   {
@@ -143,7 +143,7 @@ export const PROJECTS: Project[] = [
       "modal_07_slide_img_2.png",
       "modal_07_slide_img_3.png",
     ],
-    projectInfo:
+    retrospective:
       "Hero UI 라이브러리와 Tailwind CSS를 사용한 프로젝트입니다. 평소 학습으로만 접했던 Tailwind를 처음으로 실무에 적용한 사례입니다. 프로젝트 막바지에 투입되어 기존 코드 구조와 프로젝트 규칙을 파악하는 데 초반에 시간이 소요되었지만, Claude AI를 적극 활용해 코드 분석과 오류 해결 속도를 높이며 빠르게 적응할 수 있었습니다. 새로운 도구를 실무에 적용하는 것과 동시에 AI를 업무에 효율적으로 활용하는 방식을 익힌 프로젝트입니다.",
   },
 ];

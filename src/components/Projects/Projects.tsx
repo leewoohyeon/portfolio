@@ -172,6 +172,7 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
     role,
     tags,
     theme,
+    contribution,
     imgSrc,
     url,
     retrospective,
@@ -224,7 +225,11 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
             </svg>
           </button>
         </div>
-        <div className="modal-img" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        <div
+          className="modal-img"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {images.length > 0 ? (
             <div
               className="modal-img-track"
@@ -297,7 +302,7 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
             </div>
             <div className="modal-meta-row">
               <span className="modal-meta-label">기여도</span>
-              <span className="modal-meta-value">20%</span>
+              <span className="modal-meta-value">{contribution}</span>
             </div>
           </div>
 
@@ -323,7 +328,7 @@ const ProjectModal = ({ project, onClose }: ModalProps) => {
           {retrospective && (
             <div className="modal-section">
               <span className="modal-section-label">회고</span>
-              <p className="modal-project-info">{retrospective}</p>
+              <p className="modal-retrospective">{retrospective}</p>
             </div>
           )}
 

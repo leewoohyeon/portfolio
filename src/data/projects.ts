@@ -17,7 +17,7 @@ export interface Project {
   contribution: string;
   url?: string;
   theme: Theme;
-  imgSrc: string | string[] | null;
+  imgSrc?: string | string[] | null;
   retrospective?: string;
 }
 
@@ -52,11 +52,6 @@ export const PROJECTS: Project[] = [
     excerpt:
       "기업용 전자결재, 근태 관리, 업무 포털 기능을 제공하는 클라우드 그룹웨어 서비스",
     theme: "purple",
-    imgSrc: [
-      "project_img_02.png",
-      "modal_02_slide_img_2.png",
-      "modal_02_slide_img_3.png",
-    ],
     retrospective:
       "React를 처음 접한 프로젝트입니다. 초반에는 컴포넌트 개념이 낯설어 개발에 어려움이 있었지만, 직접 부딪히며 컴포넌트 구조에 대한 이해를 쌓아갔습니다.\n\n개발자가 미처 다루지 못한 반응형 작업을 맡아 진행하며 실질적인 기여를 할 수 있었고, MUI 라이브러리를 활용한 스타일링도 시행착오를 거치며 익혔습니다. 이 프로젝트를 계기로 React를 본격적으로 공부하게 되었고, React 기반 개발의 장점을 직접 체감할 수 있었습니다.",
   },
@@ -86,11 +81,6 @@ export const PROJECTS: Project[] = [
     contribution: "80%",
     excerpt: "근태 및 영업 관리를 지원하는 사내 업무 관리 시스템 웹 서비스",
     theme: "blue",
-    imgSrc: [
-      "project_img_04.png",
-      "modal_04_slide_img_2.png",
-      "modal_04_slide_img_3.png",
-    ],
     retrospective:
       "처음으로 프론트엔드 개발을 담당한 프로젝트입니다. 신규 페이지 개발과 CRUD 기반의 API 연동 및 기능 구현을 맡았으며, 반응형 UI도 함께 고려하여 개발했습니다.\n\nAPI 연동이 처음이었던 만큼 요청과 응답 흐름을 이해하는 데 초반에 어려움이 있었지만, 직접 구현하며 데이터 흐름을 익혔고 기능이 동작하는 순간 개발의 흥미를 느낄 수 있었습니다.\n\n또한 업무 로직이 여러 페이지와 연동되어 있어 한 페이지만 수정해도 연관된 페이지까지 영향을 주는 경우가 많았습니다. 이를 통해 프로젝트 전반적인 흐름을 파악하고 있어야 한다는 것을 직접 체감한 프로젝트입니다.",
   },
